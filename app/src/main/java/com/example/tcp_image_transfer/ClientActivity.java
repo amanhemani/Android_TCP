@@ -48,7 +48,8 @@ public class ClientActivity extends Activity {
 
                 //sends the message to the server
                 if (mTcpClient != null) {
-                    new SendMessageTask().execute(message);
+                    //new SendMessageTask().execute(message);
+                    new SendMessageTask().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, message);
                 }
 
                 //refresh the list
